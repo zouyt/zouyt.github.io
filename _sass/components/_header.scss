@@ -1,0 +1,55 @@
+.m-page-header {
+  background-color: $main-color-3;
+  a {
+    font-weight: map-get($base, font-weight);
+    @include link-text-colors( $text-color-3, $main-color-1, $main-color-1);
+    color: #222222;
+    font-weight: bold;
+  }
+  &>.main>.site-logo {
+    float: left;
+    @include horizontal-space(1rem, 0);
+    @include align-items(center);
+    height: map-get($layout, header-height);
+    &>a {
+      height: 54px;
+      margin: 0 auto;
+      font-family: "Courier New", Georgia;
+      text-shadow: 2px 2px #abaaaa;
+      text-decoration: none;
+      display: inline-block;
+      font-size: map-get($base, font-size-h1);
+      @include media-breakpoint-down(s) {
+        font-size: map-get($base, font-size-h1-small);
+      }
+    }
+    &>small{
+      display: block;
+      font-size: 13px;
+      text-shadow: 1px 1px #abaaaa; 
+    }
+    @include media-breakpoint-down(s) {
+      float: none;
+      height: map-get($layout, header-height-small);
+    }
+  }
+  &>.main>nav {
+    display: block;
+    float: right;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    ul {
+      margin: 0;
+      @include horizontal-space(1rem, .5rem, nowrap);
+      @include align-items(center);
+      height: map-get($layout, header-height);
+      @include media-breakpoint-down(s) {
+        height: auto;
+      }
+    }
+    @include media-breakpoint-down(s) {
+      float: none;
+    }
+  }
+}
